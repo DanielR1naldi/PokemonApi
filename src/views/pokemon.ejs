@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Pokémon</title>
+</head>
+<body>
+    <h1>Detalhes do Pokémon</h1>
+    <% if (pokemon) { %>
+        <div>
+            <p>Nome: <%= pokemon.name %></p>
+            <p>ID: <%= pokemon.id %></p>
+            <p>Tipos:</p>
+            <ul>
+                <% pokemon.types.forEach(type => { %>
+                    <li><%= type %></li>
+                <% }) %>
+            </ul>
+            <p>Habilidades:</p>
+            <ul>
+                <% pokemon.abilities.forEach(ability => { %>
+                    <li><%= ability %></li>
+                <% }) %>
+            </ul>
+            <a href="/">Voltar para a lista</a>
+        </div>
+    <% } else { %>
+        <p>Pokémon não encontrado.</p>
+    <% } %>
+</body>
+</html>
